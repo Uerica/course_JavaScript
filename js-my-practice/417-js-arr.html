@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    h2{
+        color: hotpink;
+    }
+    </style>
+</head>
+
+<body>
+
+    <h2>印二維陣列表格</h2>
+
+    <script>
+        var arr = new Array(new Array(1, 2, 3, 4), new Array(11, 22, 33, 44), new Array(15, 25, 35, 45), new Array(16, 26, 36, 46));
+
+        document.write("<table border=1>");
+        for (var i = 0; i < 4; i++) {
+            document.write("<tr>");
+            for (var j = 0; j < 4; j++) {
+                document.write("<td>" + arr[i][j] + "</td>");
+            } document.write("</tr>");
+        }document.write("<table>")
+
+    </script>
+
+    <h2>印二維陣列表格 way2</h2>
+
+    <script>
+        var arr = new Array(new Array(1, 2, 3, 4), new Array(11, 22, 33, 44), new Array(15, 25, 35, 45), new Array(16, 26, 36, 46));
+
+        document.write("<table border=1>");
+        for (var i in arr) {
+            document.write("<tr>");
+            for (var j in arr[i]) {
+                document.write("<td>" + arr[i][j] + "</td>");
+            } document.write("</tr>");
+        }document.write("<table>")
+
+    </script>
+
+    <h2>產生一維arr</h2>
+
+    <script>
+    var arr=[11,22,33];
+    arr.push(100);
+    for( i in arr){
+    document.write(i,":",arr[i],"<br>")
+    };
+    </script>
+
+    <h2>產生二維arr</h2>
+
+    <script>
+    var arr=[[],[11,22,33],[15,25,35]];
+    arr.push(100);
+    for(i in arr){
+        document.write(i,":",arr[i],"<br>");
+    }
+    </script>
+
+</body>
+
+</html>

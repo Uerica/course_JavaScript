@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h2>事件處理</h2>
+
+        <input type="button" value="10+20=" name="btn">
+        <input type="button" value="10+20=" name="btn">
+        <input type="button" value="10+20=" name="btn">
+    
+        <script>
+            function btnEvent(){
+                var a =10;
+                var b =20;
+                alert( a + b ); 
+            }
+            
+            function btntest(){
+                var a =100;
+                var b =200;
+                alert( a + b ); 
+            }
+    
+            function btnyoyo(){
+                alert("好好玩yoyo"); 
+                removeEventListener("click",btnyoyo,false);
+                addEventListener("click",btnplay,false);
+            }
+
+            function btnplay(){
+                alert("玩不膩~")
+            }
+    
+    
+            //(1)物件.on事件名稱=事件處理器,只能做一件事
+    
+            var btns = document.getElementsByName("btn");
+            btns[0].onclick=btnEvent;
+    
+            //(2)物件.聽(事件,)能做很多事
+    
+            btns[1].addEventListener("click",btnEvent,false);
+            btns[1].addEventListener("click",btntest,false);
+            btns[1].addEventListener("click",btnyoyo,false);
+        </script>
+    
+</body>
+</html>

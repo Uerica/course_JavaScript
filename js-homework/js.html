@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>hello</h2>
+    <script>
+    
+    var arr = new Array(10,14,18,22,26,30,34,38,42,46);
+    for (var i = 0; i < arr.length; i++) {
+        const fontSize = arr[i];
+        
+        if( i % 2 == 0 ){
+            document.write("<div style='font-size:" + fontSize + "px;color:blue'>hello....</div>")
+        }else{
+            document.write("<div style='font-size:" + fontSize + "px;color:pink'>hello....</div>")
+        }
+    }
+    
+    
+    
+    </script>
+
+    <h2>隨機產生4個0..9之間的數</h2>
+    <script>
+    for(var i = 0 ; i < 4 ; i++){
+       document.write(Math.floor(Math.random()*9))//random是0~1(不滿1)中間的值包含小數點
+    }
+    
+    </script>
+
+    <h2>6個不重複的大樂透數字</h2>
+    <script>
+
+
+
+    var ball = new Array(42);
+    for(var i = 0 ; i < ball.length ; i++){
+        ball[i] = i+1;
+    }
+
+    for(var i = ball.length - 1 ; i > 0; i-- ){
+        var j = Math.floor(Math.random() * (i + 1));
+        var a = ball[i];
+        ball[i] = ball[j];
+        ball[j] = a;
+    }
+    
+    for( i = 0 ; i < 6 ; i++){
+        document.write(ball[i],"<br>");
+    }
+    
+    </script>
+    
+
+
+
+</body>
+</html>

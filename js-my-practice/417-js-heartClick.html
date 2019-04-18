@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/snoopy_1.jpg" alt="snoopy_1">
+    <img src="/heart_white.png" alt="heart_white" title="加入收藏" id="heart">
+
+    <script>
+    function heartClick(){
+        var hearts = document.getElementById("heart")//寫if else來定義點擊時的轉換
+        if(hearts.title == "加入收藏"){
+            hearts.src = "heart_red.png";
+            hearts.title = "取消收藏";
+        }else{
+            hearts.src = "heart_white.png";
+            hearts.title = "加入收藏";
+        }
+    }
+
+    function init(){
+    var hearts = document.getElementById("heart");
+    hearts.onclick=heartClick;
+    }
+
+    window.onload=init //以前會將js寫在head,網頁loading會先lo js才會跑html,那function init的部分就會出錯,故用此函式代表網頁load結束才要執行函式init
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
