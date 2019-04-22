@@ -19,15 +19,25 @@
     
     var times = rand(4,7);//要印4-7次0-9
     
-    for(var i = 1 ; i <= x ; i++){
+    for(var i = 1 ; i <= times ; i++){
         var Num = rand(0,9);
         var R = rand(0,255);
         var G = rand(0,255);
         var B = rand(0,255);
         document.write("<span style='font-size:60px;color:rgb(",R,",",G,",",B,")'>",Num,"</span>");
         
-    }
-    
+    }document.write("<br>");
+
+    //搭配英文取亂數
+    for(var i = 1 ; i <= times ; i++){
+        var NumRand = rand(0,35);
+        var wordAndNum = NumRand.toString(36);
+        var R = rand(0,255);
+        var G = rand(0,255);
+        var B = rand(0,255);
+        document.write("<span style='font-size:60px;color:rgb(",R,",",G,",",B,")'>",wordAndNum,"</span>");
+        
+    };
     
 </script>
 
