@@ -16,13 +16,20 @@
             border: 1px solid black;
             width: 100px;
             height: 100px;
-            text-align: center
+            text-align: center;
+            font-size: 20px;
+            color:deepskyblue;
         }
 
         .light {
-            background-color: yellow;
+            background-color:deeppink;
 
         }
+
+     
+
+
+        
     </style>
 
 </head>
@@ -30,28 +37,28 @@
 <body>
     <table>
         <tr>
-            <td id="box1">1</td>
-            <td id="box2">2</td>
-            <td id="box3">3</td>
-            <td id="box4">4</td>
+            <td id="box0"></td>
+            <td id="box1"></td>
+            <td id="box2"></td>
+            <td id="box3"></td>
         </tr>
         <tr>
-            <td id="box12">12</td>
-            <td id="boxa">a</td>
-            <td id="boxb">b</td>
-            <td id="box5">5</td>
+            <td id="box11"></td>
+            <td id="boxa" colspan="2" rowspan="2"></td>
+            <td id="box4"></td>
+
         </tr>
         <tr>
-            <td id="box11">11</td>
-            <td id="boxc">c</td>
-            <td id="boxd">d</td>
-            <td id="box6">6</td>
+            <td id="box10"></td>
+            <td id="box5"></td>
+
+
         </tr>
         <tr>
-            <td id="box10">10</td>
-            <td id="box9">9</td>
-            <td id="box8">8</td>
-            <td id="box7">7</td>
+            <td id="box9"></td>
+            <td id="box8"></td>
+            <td id="box7"></td>
+            <td id="box6"></td>
         </tr>
 
 
@@ -76,43 +83,70 @@
         };
 
         // ------------------------------------------
-
+        var currentTimes;
+        var currentBoxIndex;
+        var startBox;
         var timerId;
-        var box = rand(0, 11)//隨機令box的id 0-11
+        var runTimes;
 
+        // box初始化
+        function boxInit() {
+            for (i = 0; i <= 11; i++) {
+                var box = $id("box" + i);
+                box.classList.remove("light");
+                box.innerHTML = i;
+            }
+        };
+
+        
         function startRun() {
+            btn.disabled = true;
+            boxInit();
+            runTimes = rand(12, 36);
+            startBox = rand(0, 11);
+            currentTimes = 0;
             timerId = setInterval(run, 100);
-        }
+            console.info("startBox:" + startBox, "runTimes:" + runTimes);
+            $id("boxa").innerHTML = "";
+        };
 
+        
         function run() {
-            box++;
-            if (box == 11) {
+            currentTimes++;
+            if (currentTimes > runTimes) {
                 clearInterval(timerId);
-            } else
-            var boxstart = box;
-            var boxend = box--;
-            var boxadd = $id("box" + boxstart);
-            var boxremove = $id("box" + boxend);
-            boxadd.classList.add("light");
-            boxremove.classList.remove("light");
+                showBonus();
+            } else {
+
+                currentBoxIndex = (startBox + currentTimes - 1) % 12;
+                previousBoxIndex = (startBox + currentTimes - 2) % 12;
+                console.debug("currentTimes:" + currentTimes, "currentBoxIndex:" + currentBoxIndex, "previousBoxIndex:" + previousBoxIndex);
+
+                var boxadd = $id("box" + currentBoxIndex);
+                boxadd.classList.add("light");
+
+                var boxremove = $id("box" + previousBoxIndex);
+                boxremove.classList.remove("light");
+
+            }
+        };
+
+
+        function showBonus() {
+            var bonus = rand(1, 1500) * 100;
+            console.log(bonus);
+            $id("box" + currentBoxIndex).innerHTML = bonus;
+            btn.disabled = false;
+            $id("boxa").innerHTML = "恭喜中獎~啾啾";
         }
 
 
         function init() {
             $id("btn").onclick = startRun;
-
+            boxInit();
         }
 
-        window.onload=init;
-
-
-
-
-
-
-
-
-
+        window.addEventListener("load", init, false);
 
     </script>
 </body>

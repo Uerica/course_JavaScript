@@ -95,10 +95,11 @@
                 clearInterval(timerId);
             } else
             var boxstart = box++;
-            var boxend = box--;
+            var boxend = box-2;
             var boxadd = $id("box" + boxstart);
             // var boxremove = $id("box" + boxstart);
             boxadd.classList.add("light");
+            boxend.classList.remove("light");
             // boxadd.classList.remove("light");
       
         }
