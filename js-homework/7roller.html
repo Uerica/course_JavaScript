@@ -95,10 +95,11 @@
                 var box = $id("box" + i);
                 box.classList.remove("light");
                 box.innerHTML = i;
+                $id("boxa").innerHTML = "";
             }
         };
 
-        
+        //box開始跑之前先黑箱一下
         function startRun() {
             btn.disabled = true;
             boxInit();
@@ -106,8 +107,7 @@
             startBox = rand(0, 11);
             currentTimes = 0;
             timerId = setInterval(run, 100);
-            console.info("startBox:" + startBox, "runTimes:" + runTimes);
-            $id("boxa").innerHTML = "";
+            //console.info("startBox:" + startBox, "runTimes:" + runTimes);
         };
 
         

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body id="myBody">
+    <P>嗨你好</P>
+    <form action="" id="myForm">
+        <P>嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿</P>
+        <input type="button" id="btn" value="按我">
+
+    </form>
+
+    <script>
+
+        function $id(id) {  //抓個id function
+            return document.getElementById(id);
+        };
+
+
+        function click_btn(e) {
+            alert("嗨唷 button被按");
+            e.stopPropagation();//利用e.target & stopPropagation來停止蔓延現象
+        }
+
+
+        function click_form() {
+            alert("嗨唷 form被按");
+        }
+
+        function click_body() {
+            alert("嗨唷 body被按");
+            
+        }
+
+
+
+
+        function init() {
+            $id("btn").onclick = click_btn;
+            $id("myForm").onclick = click_form;
+            $id("myBody").onclick = click_body;
+        }
+
+        window.addEventListener("load", init, false);
+    </script>
+
+
+</body>
+
+</html>

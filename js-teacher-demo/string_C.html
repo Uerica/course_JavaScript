@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>String</title>
+</head>
+<body>
+<script type="text/javascript">
+var str="abcdeabcde";
+
+var obj = new String('12345');
+
+
+document.write("length : " , str.length, "<br>"); 
+document.write("toUpperCase() : " , str.toUpperCase(), "<br>");
+document.write("str : " , str, "<br>"); 
+
+document.write("typeof str : " , typeof str, "<br>"); //string
+document.write("typeof obj : " , typeof obj, "<br>"); //object
+
+document.write("indexOf('cd') : " , str.indexOf('cd'), "<br>"); //2
+document.write("indexOf('cdd') : " , str.indexOf('cdd'), "<br>"); //-1
+
+document.write("lastIndexOf('cd') : " , str.lastIndexOf('cd'), "<br>"); //7
+document.write("lastIndexOf('cdd') : " , str.lastIndexOf('cdd'), "<br>"); //-1
+
+document.write("match('cd') : " , str.match('cd'), "<br>");  //cd
+document.write("match('cdd') : " , str.match('cdd'), "<br>"); //null 
+
+document.write("charAt(3) : " , str.charAt(3) , "<br>");  //d
+document.write("charCodeAt(3) : " , str.charCodeAt(3), "<br>"); //100
+
+document.write("substr(2,5) : " , str.substr(2,5), "<br>"); //cdeab
+document.write("substring(2,5) : " , str.substring(2,5), "<br>");//cde
+
+document.write("replace('de','QQQ') : " , str.replace('de','QQQ') , "<br>"); 
+
+str = "aa,bb,cc:dd,ee,ff";
+var arr = str.split(",");
+for( var i=0; i<arr.length; i++){
+	document.write( i, " : ", arr[i].fontcolor("deeppink").italics(), "<br>");
+}
+</script>    
+</body>
+</html>

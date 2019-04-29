@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<h2>類別使用</h2>	
+<script type="text/javascript">
+	
+document.write("Math.ceil:",Math.ceil(3.5),"<br>");
+document.write("Math.floor:",Math.floor(4.5),"<br>");
+document.write("Math.random:",Math.random(),"<br>");
+
+for(var i=1;i<=10;i++){
+	console.log(Math.sqrt(i))
+}
+
+</script>
+
+
+
+<h2>陣列</h2>	
+<script type="text/javascript">
+	
+var arr= new Array(11,22,33);
+for(i=0;i<=2;i++){
+	document.write( arr[i],"<br>");
+}
+
+</script>
+
+<h2>陣列長度</h2>
+<script type="text/javascript">
+var arr=new Array(11,22,33,44,55);
+for(i=0;i<arr.length;i++){
+document.write(arr[i]+"<br>")
+}
+
+</script>	
+
+
+<h2>陣列 length</h2>
+
+<script type="text/javascript">
+var arr = new Array(11,22,33);
+arr[8] = 100;
+
+for( var i=0; i < arr.length; i++){
+	document.write( arr[i], "<br>");
+}
+</script>
+
+
+<h2>for i in arr</h2>
+<script type="text/javascript">
+var arr = new Array(11,22,33);
+arr[8] = 100;	
+for(var i in arr)
+	document.write(i,":",arr[i],"<br>")
+
+
+
+</script>
+
+<h2>arr2</h2>
+
+<script type="text/javascript">
+
+
+for(i in arr)
+	document.write(i,":",arr[i],"<br>");
+</script>
+
+<script type="text/javascript">
+	
+var arr = new Array(11,22,33,44);
+
+document.write(arr.toString(),"<br>");
+document.write(arr.join(),"<br>");
+document.write(arr.join('@_@'),"<br>");
+document.write(arr,"<br>");
+
+</script>
+
+<hr>
+
+<script type="text/javascript">
+var arr = new Array(11,22,33,44,55);
+arr[arr.length]=100;
+arr[arr.length]=200;
+arr.push(1000);
+document.write(arr);
+</script>
+
+<hr>
+
+<h2>將arr帶入</h2>
+<script type="text/javascript">
+var arr = new Array(11,22,33,44,55,66,77);
+for(var i=arr.length-1;i>=3;i--)
+
+arr[i+1]=arr[i]
+arr[3]=100;
+document.write(arr);
+
+</script>
+
+
+<h2>arr.slice</h2>
+<script type="text/javascript">
+var arr=new Array(11,22,33,44,55,66,77)
+var arr2=arr.slice(3,5);
+
+document.write(arr,"<br>");
+document.write(arr2,"<br>");
+
+</script>
+
+<h2>arr.splice</h2>
+<script type="text/javascript">
+var arr=new Array(11,22,33,44,55,66,77,88,99)
+var arr2=arr.splice(3,5,100,200);
+
+document.write(arr,"<br>");
+document.write(arr2,"<br>");
+</script>
+
+<hr>
+
+<script type="text/javascript">
+	
+var arr = new Array(11,22,33,44,55,66,77)
+
+var index = arr.indexOf(55);
+document.write(index)
+
+</script>
+
+</body>
+</html>
