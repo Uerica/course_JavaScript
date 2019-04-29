@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        帳號<input type="text" name="memId"><br>
+        密碼<input type="password" name="memPsw"><br>
+        大頭貼<input type="file" name="header" id="header"><br>
+        <input type="button" value="確定加入">
+    </form>
+
+    <script type="text/javascript">
+
+        window.addEventListener("load", function () {
+            //.......header.onchange
+            document.getElementById("header").onchange = function (e) {
+                var allowedExt = ["png", "gif", "jpg"];
+                var fileStr = e.target.value;
+                //取得主檔名
+                var dot = fileStr.lastIndexOf(".");
+                var fileName = fileStr.substring(0,dot);
+                console.log(fileName);
+                //取得副檔名
+                var fileExt = fileStr.substr(dot+1);
+                
+                
+                
+
+                //檢查是否為被允許的檔案類型
+
+            };
+
+        }, false);	
+    </script>
+
+</body>
+
+</html>
