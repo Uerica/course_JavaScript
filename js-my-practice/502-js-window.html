@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>輸入刪除書號</p>
+    <input type="button" value="刪除" id="inp">
+    <input type="button" name="" id="" value= "列印" onclick= "window.print()">
+    <script>
+    
+    var inp = document.getElementById("inp");
+    inp.onclick = del;
+
+    function del(){
+        var pns = prompt("確定要的刪除書號");
+        if(pns != null){
+            if(confirm("確定要刪除"+pns+"嗎?")==true){
+                location.href = "http://www.books.com.tw";
+            }
+        }
+    }
+    
+    
+    </script>
+    
+</body>
+</html>

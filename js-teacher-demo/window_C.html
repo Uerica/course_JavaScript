@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+</head>
+<body>
+<h2>刪除書籍資料</h2>
+<input type="button"  value="刪除" onclick = "del()">
+
+<br><br>
+<input type="button" value="關閉視窗" onclick= "window.close();">
+
+<br><br>
+<input type="button" value="列印" onclick= "window.print();">//網頁上直接出現列印按鈕
+
+<br><br>
+<input type="button" value="看新聞_href" onclick= "location.href='http://yahoo.tw';">//跳轉,可以回上一頁
+
+<br><br>
+<input type="button" value="看新聞_replace()" onclick= "location.replace('http://yahoo.tw');">//跳轉,不可回上一頁~~哭哭
+
+<script type="text/javascript">
+function del(){
+	var psn = prompt("請輸入欲刪除的書號");
+	if( psn != null){
+		if( confirm("確定刪除書號"+psn+"嗎?") == true){
+			location.href = "http://www.books.com.tw";
+			//window.open("http://www.books.com.tw","booksWin");
+		}
+	}
+}	
+	
+</script>    
+</body>
+</html>
