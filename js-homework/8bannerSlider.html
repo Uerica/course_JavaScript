@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+.wrap{
+    width: 950px;
+    height: 300px;
+    background-color: #af0;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    position: relative;
+}
+
+.img{
+    width: 180px;
+    height: 200px;
+    margin: 0 5px;
+    background-color: #aaa;
+}
+
+
+#next{
+    width: 50px;
+    height: 50px;
+    background-color:aqua;
+    position: absolute;
+    right: 0;
+}
+
+#pre{
+    width: 50px;
+    height: 50px;
+    background-color:aqua;
+    position: absolute;
+    left:0;
+}
+
+.img1{
+    visibility: hidden;
+}
+
+.img3{
+    height: 220px;
+}
+
+.img5{
+    visibility: hidden;
+}
+
+.imghi-l{
+    visibility: hidden;
+    width: 180px;
+    height: 200px;
+    transform: translate(-190px,0);
+    transition: .5s;
+}
+
+.imghi-r{
+    visibility: hidden;
+    width: 180px;
+    height: 200px;
+    transition: .5s;
+    transform: translate(760px,0%);
+    transition: .5s
+}
+
+.imgnhi-l{
+    visibility: visible;
+    transform: translate(-190px,0);
+    transition: .5s;
+    height: 200px;
+}
+
+.imgnhi-r{
+    visibility: visible;
+    transform: translate(-190px,0);
+    transition: .5s
+}
+
+.imgbig{
+    width: 180px;
+    height: 220px;
+    transform: translate(-190px,0);
+    transition: .5s
+}
+</style>
+
+</head>
+
+<body>
+<div class="wrap">
+<div id="next"></div>
+<div id="pre"></div>
+<div id="img1" class="img imgl2">A</div>
+<div id="img2" class="img imgl1">B</div>
+<div id="img3" class="img imgc">C</div>
+<div id="img4" class="img imgr1">D</div>
+<div id="img5" class="img imgr2">E</div>
+</div>
+
+<script>
+
+
+
+
+//img1 imghi-r imgnhi-r imgbig imgnhi-l imghi-l
+
+function $id(id) {  //抓個id function
+            return document.getElementById(id);
+        };
+
+
+
+function init(){
+    document.getElementById("next").addEventListener("click", nextImg, false)
+
+ 
+}
+
+function clearAnimationCSS(){
+    var imgl2 = document.getElementsByClassName("imghi-l")[0]
+    var imgl1 = document.getElementsByClassName("imgnhi-l")[0]
+    var imgc = document.getElementsByClassName("imgbig")[0]
+    var imgr1 = document.getElementsByClassName("imgnhi-r")[0]
+    var imgr2 = document.getElementsByClassName("imghi-r")[0]
+
+    if(typeof(imgl2) != 'undefined')
+        imgl2.classList.remove("imghi-l");
+        
+    if(typeof(imgl1) != 'undefined')
+        imgl1.classList.remove("imgnhi-l");
+        
+    if(typeof(imgc) != 'undefined')
+        imgc.classList.remove("imgbig");
+
+    if(typeof(imgr1) != 'undefined')
+        imgr1.classList.remove("imgnhi-r");
+
+    if(typeof(imgr2) != 'undefined')
+        imgr2.classList.remove("imghi-r");
+}
+
+function nextImg(){
+    clearAnimationCSS();
+   
+    var imgl2 = document.getElementsByClassName("imgl2")[0]
+    var imgl1 = document.getElementsByClassName("imgl1")[0]
+    var imgc = document.getElementsByClassName("imgc")[0]
+    var imgr1 = document.getElementsByClassName("imgr1")[0]
+    var imgr2 = document.getElementsByClassName("imgr2")[0]
+
+    imgl2.classList.add("imghi-r");
+    imgl2.classList.remove("imgl2");
+    imgl2.classList.add("imgr2");
+    
+    imgl1.classList.add("imghi-l");
+    imgl1.classList.remove("imgl1");
+    imgl1.classList.add("imgl2");
+    
+    imgc.classList.add("imgnhi-l");
+    imgc.classList.remove("imgc");
+    imgc.classList.add("imgl1");
+
+    imgr1.classList.add("imgbig");
+    imgr1.classList.remove("imgr1");
+    imgr1.classList.add("imgc");
+
+    imgr2.classList.add("imgnhi-r");
+    imgr2.classList.remove("imgr2");
+    imgr2.classList.add("imgr1");
+
+}
+
+window.addEventListener("load", init, false);
+
+
+</script>
+</body>
+
+</html>
