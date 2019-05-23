@@ -27,7 +27,10 @@
 window.addEventListener("load",function init(){
 var smalls = document.getElementsByClassName("small");
 for(var i = 0 ; i < smalls.length ; i++){
-  smalls[i].addEventListener("click",function showLarge(e){
+
+  smalls[i].addEventListener("click",function showLarge(e)
+  
+  {
 var small = e.target;
 document.getElementById("large").src = small.src.replace("small","big").replace("SP_","");
 })
