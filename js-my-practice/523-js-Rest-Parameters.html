@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>從前</h2>
+    <script type="text/javascript">
+      function adjust(rate, highPrice, prices) {
+        for (var i = 0; i < prices.length; i++) {
+          if (prices[i] < highPrice) {
+            prices[i] += Math.floor(prices[i] * rate);
+          }
+        }
+        return prices;
+      }
+
+      var arr = [300, 1500, 400, 800];
+      document.write(adjust(0.1, 600, arr));
+    </script>
+
+    <h2>ES6</h2>
+    <script type="text/javascript">
+      function adjust(rate, highPrice, ...prices) {
+        for (var i = 0; i < prices.length; i++) {
+          if (prices[i] < highPrice) {
+            prices[i] += Math.floor(prices[i] * rate);
+          }
+        }
+        return prices;
+      }
+
+      document.write(adjust(0.1, 600, 300, 1500, 400, 800));
+    </script>
+  </body>
+</html>

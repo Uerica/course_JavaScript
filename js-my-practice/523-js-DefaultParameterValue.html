@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>ES5寫法</h2>
+    <script>
+      function sayhi(name, value) {
+        name = name || "Uerica";
+        value = value || "yoyo";
+        document.write(name, "說:", value, "<br>");
+      }
+
+      sayhi("Ann", "hihi");
+      sayhi();
+    </script>
+    <h2>ES6寫法</h2>
+    <script>
+      function sayhi(name = "Uerica", value = "yoyo") {
+        document.write(name, "說:", value, "<br>");
+      }
+
+      sayhi("Ann", "hihi");
+      sayhi();
+    </script>
+  </body>
+</html>

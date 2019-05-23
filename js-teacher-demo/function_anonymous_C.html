@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+</head>
+<body>
+<script type="text/javascript">
+
+sayHello();
+
+function sayHello(){
+	document.write( "Hello", "<br>");
+}
+
+
+var greeting = function(){
+	document.write("Hi~", "<br>");
+}
+greeting();
+
+
+var total = 1000;
+//IIFE : immediately invoke function expression
+(function(msg){
+	var total = 1;
+	document.write("total :", total, "<br>");
+	document.write(msg, " ...", "<br>");
+})('^__________^');
+
+// var total=1;
+// document.write("XD ...", "<br>");
+document.write("total :", total, "<br>");
+</script>
+</body>
+</html>

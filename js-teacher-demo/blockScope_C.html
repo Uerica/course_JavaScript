@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>constant</title>
+</head>
+
+<body>
+<h2> </h2>  
+<script type="text/javascript">
+//var 有hoist的現象
+document.write( "a: ", a, "<br>");
+var a = 10;  //給值的動作，在此才做
+document.write( "a: ", a, "<br>");
+
+//var 可重複宣告 
+var a = 100;
+document.write( "a: ", a, "<br>");
+
+//var 没有區塊性的作用範圍
+for(var i=1; i<=10; i++){
+  document.write( "i: ", i, "<br>");
+}
+document.write( "i: ", i, "<br>");
+
+
+
+
+
+//let 没有hoist的現象
+// document.write('kk : ' , kk ,"<br>"); //此行會error
+let kk = 1;
+document.write( "kk: ", kk, "<br>");
+
+//let 不可重複宣告
+// let kk = 2; //error
+
+
+//ES6 : for句型中的let作用範圍
+for(let m=1; m<=10; m++){
+   document.write( "m : ", m, "<br>");
+}
+//document.write( "m : ", m, "<br>"); //此行會error
+
+{
+	let word = "Hi~";
+	var aWord = "Hello";
+	document.write( "word: ", word, "<br>");	
+}
+// document.write('word : ' , word ,"<br>"); //此行會error
+document.write('aWord : ' , aWord ,"<br>");
+
+
+</script>
+
+</body>
+</html>

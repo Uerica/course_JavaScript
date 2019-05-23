@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" maxlength="10" placeholder="Enter ID Number" id="ID">
+
+        <input type="submit" value="CheckID" id="CheckID">
+    </div>
+
+    <script>
+
+        document.getElementById("CheckID").addEventListener("click", function(){
+            if(isId(document.getElementById("ID").value)==true){
+                alert("OK");
+            }else{
+                alert("NG");
+            }
+        });
+        
+        document.addEventListener("keyup", function (e) {
+            if (e.keyCode === 13) {
+                e.preventDefault;
+                document.getElementById("CheckID").click();
+            }
+        });
+
+
+        function isId(idNum) {
+
+            var eng = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
+            var engN1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3];
+            var engN2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5];
+            if (idNum.length != 10) {
+                // alert("Not long enough.");
+                return false;
+            }
+
+            var engAscii = idNum.toUpperCase().charCodeAt(0);
+            if (engAscii < 65 || engAscii > 90) {
+                // alert("The first character is not an english alphabet.");
+                return false;
+            }
+
+            if (idNum.charAt(1) != 1 && idNum.charAt(1) != 2) {
+                // alert("Unknown gender.");
+                return false;
+            }
+
+
+            var i = eng.indexOf(idNum.toUpperCase().charAt(0));
+            var sum = engN1[i] + engN2[i] * 9 + idNum.charAt(1) * 8 + idNum.charAt(2) * 7 + idNum.charAt(3) * 6 + idNum.charAt(4) * 5 + idNum.charAt(5) * 4 + idNum.charAt(6) * 3 + idNum.charAt(7) * 2 + idNum.charAt(8) * 1;
+            var checkCode = 10 - (sum % 10); //10
+            checkCode = checkCode == 10 ? 0 : checkCode;
+            if ( checkCode == idNum.charAt(9)) {
+                // alert("Pass!");
+                return true;
+            } else {
+                // alert("Not a right ID number.");
+                return false;
+            }
+
+                        
+               
+                
+        };            
+
+        //     if (idNum.length == 10) {
+        //         var engAscii = idNum.toUpperCase().charCodeAt(0);
+        //         if (engAscii >= 65 && engAscii <= 90) {
+        //             if (idNum.charAt(1) == 1 || idNum.charAt(1) == 2) {
+        //                 var i = eng.indexOf(idNum.toUpperCase().charAt(0));
+        //                 var sum = engN1[i] + engN2[i] * 9 + idNum.charAt(1) * 8 + idNum.charAt(2) * 7 + idNum.charAt(3) * 6 + idNum.charAt(4) * 5 + idNum.charAt(5) * 4 + idNum.charAt(6) * 3 + idNum.charAt(7) * 2 + idNum.charAt(8) * 1;
+        //                 if (10 - (sum % 10) == idNum.charAt(9)) {
+        //                     alert("Pass!")
+        //                 } else {
+        //                     alert("Not a right ID number.")
+        //                 }
+        //             } else {
+        //                 alert("Unknown gender.");
+        //             }
+        //         } else {
+        //             alert("The first character is not an english alphabet.");
+        //         }
+        //     } else {
+        //         alert("Not long enough.");
+        //     }
+        // };
+
+    </script>
+</body>
+
+</html>

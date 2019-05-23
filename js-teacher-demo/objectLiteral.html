@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>object literal</title>
+<style type="text/css">
+	h2{
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+<h2>hi, 物件</h2>
+<script type="text/javascript">
+//............陣列
+var arr = new Array();
+arr = [];
+
+var arr = new Array(11, 22, 33);
+arr = [11, 22, 33];
+arr.push(100);
+console.log("length : ", arr.length);
+
+//arr[0], arr[1]
+document.write(arr, "<br>");
+
+//............物件
+var point = new Object();
+point.x = 10;
+point.y = 20;
+document.write( "point.x : ", point.x, "<br>");
+document.write( "point.y : ", point.y, "<br>");
+
+
+//看起來空空的物件
+var point = {};  // new Object();
+
+
+//有較多內容的物件
+var point = {
+	x : 10,
+	y : 20,
+	toString : function(){  //method
+		return `x : ${this.x}, y : ${this.y}`;
+	}
+}
+
+document.write( point.toString() , "<br>");
+
+//ES6的簡化版的物件表示法
+</script>
+
+<h2>再見物件</h2>
+<script type="text/javascript">
+var emp = {
+	empno: "7001",
+	ename: "Adam",
+	toString : function(){
+		return "empno : "+ this.empno+ "<br>" + "ename : "+ this.ename+ "<br>";
+	}
+}
+
+document.write( emp.toString(), "<br>");
+
+</script>
+
+
+<h2>再見物件===2</h2>
+<script type="text/javascript">
+var empno = "7002";
+var ename = "Ann";	
+var emp = {
+	empno: empno,
+	ename: ename,
+	toString : function(){
+		return "empno : "+ this.empno+ "<br>" + "ename : "+ this.ename+ "<br>";
+	}
+}	
+
+document.write( emp.toString(), "<br>");
+</script>
+
+<h2>再見物件===3(ES6)</h2>
+<script type="text/javascript">
+var empno = "7003";
+var ename = "Alice";	
+var emp = {
+	empno,
+	ename,
+	submit(money){
+		if( money<=10000){
+			return "OK";
+		}else{
+			return "NG";
+		}
+	},
+	toString:function (){
+		return "empno : "+ this.empno+ "<br>" + "ename : "+ this.ename+ "<br>";
+	}
+}	
+
+// document.write( emp.toString(), "<br>");
+document.write( emp.submit(60000), "<br>");
+document.write( emp, "<br>");
+</script>
+</body>
+</html>
