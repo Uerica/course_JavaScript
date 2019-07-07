@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript</title>
+</head>
+<body>
+
+<h2>Math()類別使用</h2>
+<script>
+	
+document.write("Math.ceil:",Math.ceil(3.3),"<br>");//捨去小數點自動進位
+document.write("Math.floor:",Math.floor(4.5),"<br>");//捨去小數點不進位
+document.write("Math.random:",Math.random(),"<br>");//0至1(不滿1)的亂數
+document.write("隨機數0~20:",Math.floor(Math.random()*20)+1,"<br>");
+document.write(Math.sqrt(144),"<br>");//傳回平方根 Ans:12
+
+
+document.write(`<h3 style="color:pink;">迴圈與平方根</h3>`);
+
+for(var i=1;i<=20;i++){
+	console.log(Math.sqrt(i));//印出1~10平方根;
+	document.write(Math.sqrt(i),"<br>");
+}
+
+document.write(`<h3 style="color:pink;">取兩數間的隨機整數</h3>`);
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+}
+
+getRandomInt(1,6);
+document.write(getRandomInt(1,6));
+
+/* note
+Math.ceil() 捨小數點自動進位
+Math.floor() 捨小數點不進位
+Math.random() 取0~1之間 亂數
+Math.sqrt() 取平方根
+*/
+
+</script>
+</body>
+</html>

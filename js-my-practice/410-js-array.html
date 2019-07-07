@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h2>陣列</h2>	
+    <script>
+
+        var arr= new Array(11,22,33);
+        for( i=0 ; i<=2 ; i++ ){
+            document.write(arr[i],"<br>");
+        }
+
+    </script>
+
+
+    <h2>陣列長度 arr.length</h2>
+    <script>
+        //array都有length可用
+        var arr=new Array(11,22,33,44,55);
+        for(i=0;i<arr.length;i++){      
+
+        document.write("[",i,"]");
+        document.write(arr[i]+"<br>");
+
+        }
+
+    </script>	
+
+    <h2>array 給值</h2>
+    <script>
+        //給值會直接挖洞,其他undefined
+
+        var arr = new Array(11,22,33);
+        arr[8] = 100;
+
+        for( var i=0; i < arr.length; i++){
+            document.write( arr[i], "<br>");
+            console.log('arr.length:',arr.length);
+        }
+
+        /* note
+        [0]11
+        [1]22
+        [2]33
+        [3]undefined
+        [4]undefined
+        [5]undefined
+        [6]undefined
+        [7]undefined
+        [8]100
+        arr.length = 9
+        */
+
+    </script>
+
+    <h2>for i in arr</h2>
+    <script>
+        var arr = new Array(11,22,33);
+        arr[8] = 100;	
+        for(var i in arr){
+            document.write(i,":",arr[i],"<br>") //0:11,1:22,2:33,8:100
+        }
+
+        //for in 中的 i 會將arr中所有值跑過一次
+
+    </script>
+
+    <h2>arr內建方法 toString() join()</h2>
+    <script>
+
+        var arr = new Array(11,22,33,44);
+
+        document.write(arr.toString(),"<br>"); //toString 將陣列內容倒出來
+        document.write(arr.join(),"<br>"); //將陣列合併成字串
+        document.write(arr.join('和'),"<br>"); //將陣列合併成字串,可指定合併參數 
+        document.write(arr,"<br>");
+
+    </script>
+
+    <h2>array內建方法 利用[arr.lengh] arr.push()新增值</h2>
+    <script>
+        var arr = new Array(11,22,33,44,55);
+        arr[arr.length]=100; //用此方法往最後一個位置塞值,arr.length會大於最大的arr index
+        arr[arr.length]=200;
+        arr.push(1000); //塞值在陣列最後方
+        document.write(arr);//11,22,33,44,55,100,200,1000
+    </script>
+
+    <h2>將arr值帶入指定位置</h2>
+
+    <script>
+
+        var arr = new Array(11,22,33,44,55,66,77);
+        for(var i = arr.length-1 ; i>=3 ; i-- ){
+            arr[i+1] = arr[i];
+        }
+        
+        arr[3] = 100;
+        document.write(arr);
+        
+
+        /*
+        arr.length = 7
+        1 >> for (i = (7-1) ; i >= 3 ; i--){
+                arr[6+1] = arr[6];
+        }
+
+        2 >> for (i = (6-1) ; i >= 3 ; i--){
+                arr[5+1] = arr[5];
+        }
+
+        3 >> for (i = (5-1) ; i >= 3 ; i--){
+                arr[4+1] = arr[4];
+        }
+
+        4 >> for (i = (4-1) ; i >= 3 ; i--){
+                arr[3+1] = arr[3];
+        }
+        5 >> for (i = (3-1) ; i >= 3 ; i--){
+                在此因為i<3所以停止,目前arr[3]=undefined
+                後面寫入arr[3]=100
+                document.write(arr) = 11,22,33,100,44,55,66,77
+                值100被帶入[3]的位置
+        }
+        */
+
+    </script>
+
+    <h2>arr.slice(開始索引值,結束索引值) 擷取部分陣列,會回傳新陣列</h2>
+    <script>
+
+        var arr = new Array(11,22,33,44,55,66,77)
+        var arr2 = arr.slice(3,5);//擷取[3]~[5]但不包含[5]
+
+        document.write(arr,"<br>");//11,22,33,44,55,66,77
+        document.write(arr2,"<br>");//44,55
+
+    </script>
+
+    <h2>arr.splice(開始位置,刪除幾個,[替換元素]) 刪除/插入陣列</h2>
+    <script>
+
+        var arr=new Array(11,22,33,44,55,66,77,88,99);
+        var arr2 = arr.slice(0);//用此方法產生新arr的空間
+        var arr3 = arr2.splice(3,5,111,222);//刪除(改變)原本arr的元素 同時會回傳被刪除元素 ,從[3]開始刪除5個(包含自己),並插入111,222
+
+        document.write(arr,"<br>");//11,22,33,44,55,66,77,88,99
+        document.write(arr2,"<br>");//11,22,33,111,222,99
+        document.write(arr3,"<br>");//44,55,66,77,88
+
+    </script>
+
+    <h2>indexOf()找元素在陣列位置</h2>
+    <script>
+        
+        var arr = new Array(11,22,33,44,55,66,77)
+
+        var index = arr.indexOf(55);//找出55在陣列哪個位置
+        var noIndex = arr.indexOf(111);//因為陣列沒有所以回傳-1
+
+        document.write(index,'<br>');
+        document.write(noIndex,'<br>');
+
+    </script>
+</body>
+</html>
