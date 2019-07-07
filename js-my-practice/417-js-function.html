@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>javascript</title>
+
     <style>
             h2{
                 color: hotpink;
             }
-            </style>
+    </style>
+
 </head>
 
 <body>
-    <h2>eval</h2>
+
+    <h2>eval 字串轉數值可計算</h2>
     <script>
+
+
         var str = "var a = 10 ; var b = 20"
         eval(str)
-        document.write("a", a, "b");
+       
+        document.write("a:", a, ",b:",b,"<br>");//a:10 b:20
+        document.write(eval("10+2"),"<br>");//eval可將字串轉數值
+        document.write(eval("x=10 ; y=20 ; x*y"));//200
 
     </script>
 

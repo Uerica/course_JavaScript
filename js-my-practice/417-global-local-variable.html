@@ -1,85 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>javascript</title>
 </head>
-
 <body>
+    <h2> global local variable </h2>
     <script>
         var a = 10;
         var b = 20;
-        c = 30;
+        c = 30; //沒有var js會自動var
 
         function test(mm) {
-            var d = 40;
-            a = 100;
-            d = 400;
+            var d = 40; //區域變數,外面找不到
+            a = 100; //裡面的值會改變外面
+            d = 400; //裡面已經定義d為區域變數,所以外面找不到
             e = 500;//裡面沒var 外面幫你var
+            document.write("區域d:",d,"<br>");//400
         }
 
         test();
 
-        document.write("a:", a, "<br>");
-        document.write("b:", b, "<br>");
-        document.write("c:", c, "<br>");
-        document.write("e:", e, "<br>");
-        document.write("d:", d, "<br>");//錯誤不能放在前,後面無法執行QQ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+        document.write("a:", a, "<br>");//100
+        document.write("b:", b, "<br>");//20
+        document.write("c:", c, "<br>");//30
+        document.write("e:", e, "<br>");//500
+        document.write("d:", d, "<br>");//錯誤不能放在前,後面無法執行QQ
+
     </script>
 
     <h2>function bug</h2>
-
     <script>
-        function sum(c, b) {
+        function sum(c,b) {
             total = 0;
             a = 10;
-            for (i = 0; i < arguments.length; i++) {
-                total = arguments[i] + total;
-            } return total;
-        }
+            //arguments.length == 2 所有function中的參數有幾個長度就有幾個
+            for (i = 0; i < arguments.length; i++) { 
+                total = arguments[i] + total; //arguments[0] + total == 11 + 0 ,arguments[1] + total == 22+11
+            } return total; //33
+        };
      
-        var total=0;
-        var i = 100; 
+        var total = 0; 
+        var i = 100;
         var a = 5;
         
         total += i
 
-        document.write(total,"<br>",i,"<br>",sum(11,22),"<br>",a,"<br>")
-
-
-
+        document.write("total:",total,"<br>","i:",i,"<br>","sum(11,22):",sum(11,22),"<br>","a:",a,"<br>")//100,100,33,10
 
     </script>
-	<h2>區域, 全域</h2>
-    <script type="text/javascript">
-    var a;
-    a = 10;
-    
-    var b = 20;
-    
-    c = 30;
-    
-    function test( mm ){
-        var d = 40;
-        a = 100;
-        d = 400;
-        e = 500;
-    }
-    
-    test();
-    
-    document.write( "a :", a, "<br>");	
-    document.write( "b :", b, "<br>");	
-    document.write( "c :", c, "<br>");
-        
-    document.write( "e :", e, "<br>");
-    document.write( "d :", d, "<br>");	//error
-    </script>   
-
 
 </body>
-
 </html>

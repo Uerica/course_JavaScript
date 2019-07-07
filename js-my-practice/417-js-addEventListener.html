@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>javascript</title>
 </head>
 <body>
     
@@ -15,6 +13,7 @@
         <input type="button" value="10+20=" name="btn">
     
         <script>
+
             function btnEvent(){
                 var a =10;
                 var b =20;
@@ -28,9 +27,9 @@
             }
     
             function btnyoyo(){
-                alert("好好玩yoyo"); 
-                removeEventListener("click",btnyoyo,false);
-                addEventListener("click",btnplay,false);
+                alert("好好玩yoyo");
+                //this.removeEventListener("click",btnyoyo,false);
+                this.addEventListener("click",btnplay,false);
             }
 
             function btnplay(){
@@ -48,6 +47,8 @@
             btns[1].addEventListener("click",btnEvent,false);
             btns[1].addEventListener("click",btntest,false);
             btns[1].addEventListener("click",btnyoyo,false);
+         
+
         </script>
     
 </body>

@@ -12,28 +12,32 @@
 	<tr><td>dddddd</td><td>444444</td></tr>
 	<tr><td>eeeeee</td><td>555555</td></tr>
 </table>
-<script type="text/javascript">
+<script>
 
 
 
 function hightLight(event){
-    var obj = event.target;
+    console.log(this);//抓到<td>
+    console.log(event);//MouseEvent 超多東西的!!
+    console.log(event.screenX);
+    var obj = event.target;//這裡指target:td
     obj.style.color="pink";
     obj.style.backgroundColor="blue";
     obj.fontSize="30px";
 }
 
 function normal(event){
+    console.log(event);
     var obj = event.target;
     obj.style.color="black";
     obj.style.backgroundColor="white";
-
 }
 
 function init(){
 var tds = document.getElementsByTagName("td");
 var length = tds.length;
 
+//利用for迴圈將所有tds都跑過一遍,就不用寫很多事件拉~
 for(var i = 0 ; i < length ; i++ ){
     tds[i].onmouseover = hightLight;
     tds[i].onmouseout = normal;

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>javascript setInterval</title>
     <style>
+
     div{
     width: 200px;
     height: 100px;
@@ -16,25 +15,28 @@
       text-align: center;
       line-height: 100px;
     }
+
     </style>
 </head>
 <body>
-    <div id="hihi">Happy new year!</div>
+
+    <div id="timeDiv">Happy new year!</div>
 
 <script>
-var num = 5;
+var num = 5; //先var一個參考變數
 var timerId;
 
 function count(){
-    num--;
+    num--;//5-1,4-1,3-1...
     if(num == 0){
         num = "Happy new year!" ;
-        clearInterval(timerId);
-    }document.getElementById("hihi").innerHTML=num;
+        clearInterval(timerId);//停止執行
+    }document.getElementById("timeDiv").innerHTML=num;
+    console.log(num);//沒寫clearInterval(timerId)會NaN一直跑
 }
 
 function init(){
-    timerId = setInterval(count,1000);
+    timerId = setInterval(count,1000);//setInterval(執行function名稱,每次隔幾毫秒)
 }
 
 
