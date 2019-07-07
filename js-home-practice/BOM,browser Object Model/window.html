@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM--window</title>
+    <style>
+    h1{
+    color: #abc;    
+    }
+
+    h3{
+    color:palevioletred;
+    }
+    
+    </style>
+</head>
+<body>
+    <h1>window:讓你可以存取操作瀏覽器視窗</h1>
+    <p>JavaScript 的 window 物件讓你可以存取和操作瀏覽器的視窗。window 物件內建提供很多不同的屬性 (properties) 和方法 (methods)。</p>
+    <h3>取得瀏覽器視窗的寬高 (Window Size)</h3>
+    <script>
+        //取得瀏覽器視窗的可見範圍的寬度和高度（不包含工具列、捲軸這些），單位是px
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        console.log('width:',width,'height:',height);
+    
+        //取得瀏覽器整個視窗的寬度和高度（包含工具列、捲軸這些），單位是px
+        var outerwidth = window.outerWidth;
+        var outerheight = window.outerHeight;
+        console.log('outerwidth:',outerwidth,'outerheight:',outerheight);
+    </script>
+
+    
+    <h3>瀏覽器開啟新視窗 window.open()</h3>
+    <h3>關閉視窗 window.close()</h3>
+    <script>
+        // window.open('http://www.fooish.com/');
+        // var windowObjectReference = window.open(
+        // 'http://www.fooish.com/',
+        // 'fooish',
+        // 'width=800,height=600,resizable=no,scrollbars=yes,status=no,location=no');
+        // window.close();關閉window.open打開的視窗
+        
+    </script>
+</body>
+</html>
