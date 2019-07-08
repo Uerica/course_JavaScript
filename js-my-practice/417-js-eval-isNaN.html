@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+
+    <style>
+            h2{
+                color: hotpink;
+            }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>eval 字串轉數值可計算</h2>
+    <script>
+
+
+        var str = "var a = 10 ; var b = 20"
+        eval(str)
+       
+        document.write("a:", a, ",b:",b,"<br>");//a:10 b:20
+        document.write(eval("10+2"),"<br>");//eval可將字串轉數值
+        document.write(eval("x=10 ; y=20 ; x*y"));//200
+
+    </script>
+
+    <h2>isNaN()</h2>
+    <script>
+        document.write("'3#2'不是數值:", isNaN('3#2'), "<br>")
+        document.write("'365'不是數值:", isNaN('365'), "<br>")
+    </script>
+
+    <h2>function 會覆寫</h2>
+    <script>
+        function sum(a, b) {
+            var total = 0;
+            total = a + b;
+            return total;
+        }
+
+        function sum(a, b, c) {
+            var total = 0;
+            total = a + b + c;
+            return total;
+        }
+
+        document.write("10+20=", sum(10, 20), "<br>");
+        document.write("10+20+30=", sum(10, 20, 30));
+
+    </script>
+   
+</body>
+
+</html>

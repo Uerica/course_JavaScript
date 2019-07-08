@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+</head>
+<body>
+        <h2>給參數的function yo ES6適用</h2>
+        <script>
+            function sayHello(word = "Hello~") { //先給參數值就不怕undefine了呵呵
+                document.write(word, "<br>");
+    
+            }
+            sayHello();//內容為undifine所以直接使用預先參數
+            sayHello("hihi");
+    
+    
+        </script>
+    
+        <h2>給參數的function yo ES5以前用法</h2>
+    
+        <script>
+            function sayHello(word) {
+                word = word || "Hello yoyo" //** '||'邏輯運算中or的意思,回傳值為布林值 'true or flase' ,但在js中會回傳正確值;
+                //故當sayHello()沒給值,word=undifine,undifine為空值,得到結果會是flase,所以式子會往後做,
+                //||後方的"Hello yoyo"有值,故結果為true,js會直接回傳!超酷!yoyo**
+                document.write(word, "<br>");
+    
+            }
+            sayHello();//內容為undifine所以直接使用預先參數
+            sayHello("hihi");
+        </script>
+</body>
+</html>

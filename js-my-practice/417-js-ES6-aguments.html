@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>arguments</title>
+</head>
+<body>
+    <h2>神秘的arguments</h2>
+    <script>
+        //aguments為類陣列 參考的是參數數量
+        function sumTotal(a, b, c) {
+            var total = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                total = arguments[i] + total;
+            } return total;
+        }
+
+        document.write("10+20+30=", sumTotal(10, 20, 30));
+
+    </script>
+</body>
+</html>
