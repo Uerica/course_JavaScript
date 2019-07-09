@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 
@@ -17,6 +14,7 @@
         <option value="沈潔華">AD701</option>
 
     </select>
+
     導師 : <span id="showPanel" style="color:blue"></span>
     <p>
         <script>
@@ -36,15 +34,15 @@
 
             
             var teacher = $id("teacher");
-            document.write("length : ", teacher.length, "<br>");
-            document.write("multiple : ", teacher.multiple, "<br>");
+            document.write("length : ", teacher.length, "<br>");//3
+            document.write("multiple : ", teacher.multiple, "<br>");//是否為多選 false
             document.write("options : ", teacher.options, "<br>");
             document.write("options.length : ", teacher.options.length, "<br>"); //3
             document.write("options[2] : ", teacher.options[2], "<br>");
-            document.write("options[2].text : ", teacher.options[2].text, "<br>");
-            document.write("options[2].value : ", teacher.options[2].value, "<br>");
-            document.write("options[2].defaultSelected : ", teacher.options[2].defaultSelected, "<br>");
-            document.write("selectedIndex : ", teacher.selectedIndex, "<br>");	//0
+            document.write("options[2].text : ", teacher.options[2].text, "<br>");//AD701
+            document.write("options[2].value : ", teacher.options[2].value, "<br>");//華姐
+            document.write("options[2].defaultSelected : ", teacher.options[2].defaultSelected, "<br>");//是否為默認選項 false
+            document.write("selectedIndex : ", teacher.selectedIndex, "<br>");	//0 默認選項是
             document.write("value : ", teacher.value, "<br>");	//DoDo
 
 

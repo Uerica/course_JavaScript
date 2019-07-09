@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+</head>
+<body>
+    <div id="testDiv" class="aaa bbb ccc"></div>
+    <script>
+    var testDiv = document.getElementById('testDiv');
+    
+    //classList() 列出元素目前的class //DOMTokenlist
+    console.log(testDiv.classList);
+
+    //classList.contains() 檢查class是否存在 回傳true / false
+    console.log(testDiv.classList.contains('ddd')); //false
+    console.log(testDiv.classList.contains('aaa')); //true
+    
+    //classList.item() 查找指定索引值的class
+    console.log(testDiv.classList.item(1)); //bbb
+    console.log(testDiv.classList.item(10)); //null
+
+    //classList.add() 增加class
+    testDiv.classList.add('eee');
+    console.log(testDiv.classList); //aaa bbb ccc eee
+
+    //classList.remove() 移除class
+    testDiv.classList.remove('eee');
+    console.log(testDiv.classList); //aaa bbb ccc
+
+    //classList.toggle() 沒有增加,有則移除
+    testDiv.classList.toggle('fff');
+    console.log(testDiv.classList); //aaa bbb ccc fff
+    testDiv.classList.toggle('fff');
+    console.log(testDiv.classList); //aaa bbb ccc
+
+
+    </script>
+</body>
+</html>

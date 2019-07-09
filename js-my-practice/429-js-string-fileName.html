@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>javascript substring() substr()</title>
 </head>
 
 <body>
+
     <form>
         帳號<input type="text" name="memId"><br>
         密碼<input type="password" name="memPsw"><br>
@@ -16,31 +14,52 @@
         <input type="button" value="確定加入">
     </form>
 
-    <script type="text/javascript">
+    <script>
 
         window.addEventListener("load", function () {
             //.......header.onchange
             document.getElementById("header").onchange = function (e) {
                 var allowedExt = ["png", "gif", "jpg"];
                 var fileStr = e.target.value;
+                
+                console.log('e:',e);//change事件 在此target是input
+                console.log('e.target:',e.target);//input
+                console.log('e.target.value:',e.target.value);//c:\fakepath\大丹.png(檔案名稱含檔型)
+                
                 //取得主檔名
-                var dot = fileStr.lastIndexOf(".");
-                var fileName = fileStr.substring(0,dot);
-                console.log(fileName);
+                var dot = fileStr.lastIndexOf(".");//從後往前找,找出"."最後出現的位置,回傳索引值
+                console.log('dot:',dot);//18
+                
+                var fileName = fileStr.substring(0,dot);//切割部分字串,substring(0,18),印出字串索引值0~18
+                console.log('fileName:',fileName);//c:\fakepath\大丹
+                
                 //取得副檔名
-                var fileExt = fileStr.substr(dot+1);
-                
-                
-                
-
+                var fileExt = fileStr.substr(dot+1);//切割部分字串 substr(18+1)代表從19開始取到結束
+                console.log("fileExt:",fileExt)//png
                 //檢查是否為被允許的檔案類型
-
             };
+        }, false);
 
-        }, false);	
-
-        var nowDate = Date.parse('2016-05-10');
+        var nowDate = Date.parse('2019-05-10');
         document.write(nowDate);
+
+
+        /*note substring()與substr()的差別
+        在()中都只有一個值時, substring() 與 substr() 的作用是差不多的;
+        
+        substr(3)代表字串從索引值3開始取到結束
+        substring(3)代表字串從索引值3開始取到結束
+
+        但當裡面有兩個值就不同了
+        substr(3,6)表示從索引值3開始往後取6個
+        substring(3,6)表示從索引值3開始往後取到索引值6結束,且不包含索引值6
+        
+        */
+
+        var mail = 'minas19901231@gmail.com'
+        console.log(mail.substr(3,6));//as1990
+        console.log(mail.substring(3,6));//as1
+
     </script>
 
 </body>

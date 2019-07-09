@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>filter 條件篩選</title>
 </head>
 <body>
-    <h2>自己做</h2>
     <script>
-    var prices = [38,100,56,123,23];
-    var under100 = [];
-    for(var i=0 ; i<prices.length; i++){
-        if()
-    }
+        var ages = [32, 33, 16, 40, 20];
+
+        function checkAdult(age) {
+            return age >= 18;
+        }
+        
+        console.log(ages.filter(checkAdult));//32,33,40,20
+        
     
     
     </script>

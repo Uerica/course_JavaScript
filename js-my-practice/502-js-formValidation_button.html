@@ -36,7 +36,8 @@ input {padding-left:3px;}
   <tr><td colspan="2" align="center"><input type="button" id="btnSend" value="確定加入"></td></tr>
 
 </form>  
-</table>  
+</table>
+
 <script>
 function $id(id){
   return document.getElementById(id);
@@ -48,29 +49,31 @@ var memPsw = $id("memPsw");
 var sexs = document.getElementsByName("sex");
 var info = $id("info");
 
-
   if(memId.value.length < 6){
     alert("帳號不可以低於6碼");
     memId.focus();
     return;
   }
+
   if(memPsw.value.length < 6){
     alert("密碼不可以低於6碼");
     memPsw.select();
     return;
   }
+
   if(sexs[0].checked == false && sexs[1].checked == false){
     alert("性別一定要選");
     return;
   }
+
   if(info.selectedIndex == 0 ){
     alert("消息來源一定要選");
     return;
   }
 
   $id("myForm").submit();
-    
-  };
+
+}
 
 
 
@@ -100,7 +103,7 @@ window.addEventListener( "load" , function (){
 
 
   
-
 </script>
+
 </body>
 </html>

@@ -3,33 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>javascript</title>
 </head>
 
 <body id="myBody">
-    <P>嗨你好</P>
-    <form action="" id="myForm">
-        <P>嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿</P>
+    <form id="myForm">
         <input type="button" id="btn" value="按我">
-
     </form>
+
 
     <script>
 
         function $id(id) {  //抓個id function
             return document.getElementById(id);
-        };
+            };
 
 
         function click_btn() {
             alert("嗨唷 button被按");
+           
         }
 
-
-        function click_form() {
+        function click_form(e) {
             alert("嗨唷 form被按");
+            e.stopPropagation();
+            console.log(e); 
         }
 
         function click_body() {
@@ -41,11 +39,18 @@
 
         function init() {
             $id("btn").addEventListener("click" , click_btn ,false);//false --> bubble由內到外
-            $id("myForm").addEventListener("click" , click_form ,false);
-            $id("myBody").addEventListener("click" , click_body ,true);//true --> capture由外到內且會先執行
+            $id("myForm").addEventListener("click" , click_form ,true);//true --> capture由外到內且會先執行
+            $id("myBody").addEventListener("click" , click_body ,false);
         }
+        //都是false的順序是 button -> form -> body
+        //form如果設為true 會先被執行
 
         window.addEventListener("load", init, false);
+
+        /*
+        因為在html文件中,這些元素是被層層包住,所以案到子元素父元素也會作用
+        可以用e.stopPropagation();來停止蔓延
+        */
     </script>
 
 
