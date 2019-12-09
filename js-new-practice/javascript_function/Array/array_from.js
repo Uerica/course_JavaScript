@@ -10,9 +10,9 @@ console.log(Array.from([1, 2, 3], x => x + 3)) //[ 4, 5, 6 ]
 //Array from a String
 console.log(Array.from('Uerica')); //[ 'U', 'e', 'r', 'i', 'c', 'a' ]
 
-//Array from a Set?
+//**Array from a Set?
 
-//Array from a Map?
+//**Array from a Map?
 
 //Array from an Array-like object (arguments)
 //arguments由函式參數取得的類陣列物件
