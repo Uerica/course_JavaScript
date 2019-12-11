@@ -11,7 +11,6 @@ const d = a.concat('e',6,'u');
 console.log(d); //[ 1, 2, 3, 'e', 6, 'u' ]
 
 //多陣列合併
-
 const e = [1,2,3];
 const f = [4,5,6];
 const g = [7,8];
